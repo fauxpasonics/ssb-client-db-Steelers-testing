@@ -1,0 +1,5 @@
+CREATE SCHEMA [etl]
+AUTHORIZATION [dbo]
+GO
+GRANT EXECUTE ON SCHEMA:: [etl] TO [svcssbrp]
+GO

@@ -1,0 +1,3 @@
+CREATE SCHEMA [nfl]
+AUTHORIZATION [dbo]
+GO

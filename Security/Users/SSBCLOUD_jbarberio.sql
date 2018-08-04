@@ -1,0 +1,6 @@
+IF NOT EXISTS (SELECT * FROM master.dbo.syslogins WHERE loginname = N'SSBCLOUD\jbarberio')
+CREATE LOGIN [SSBCLOUD\jbarberio] FROM WINDOWS
+GO
+CREATE USER [SSBCLOUD\jbarberio] FOR LOGIN [SSBCLOUD\jbarberio] WITH DEFAULT_SCHEMA=[SSBCLOUD\jbarberio]
+GO
+REVOKE CONNECT TO [SSBCLOUD\jbarberio]

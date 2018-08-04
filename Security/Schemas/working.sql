@@ -1,0 +1,3 @@
+CREATE SCHEMA [working]
+AUTHORIZATION [SSBINFO\jbarberio]
+GO

@@ -1,0 +1,7 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [rpt].[Cust_Email_4]
+AS SELECT * FROM [rpt].[PreCache_Cust_Email_4_tbl] WHERE isReady = 1
+GO

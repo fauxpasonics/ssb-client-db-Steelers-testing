@@ -1,0 +1,20 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dbo].[GetQtyFSE]
+(
+	@DimEventId INT,
+	@PlanEventCnt INT,
+	@FullSeasonEventCnt INT,
+	@QtySeat INT
+) 
+RETURNS TABLE
+AS	
+	RETURN SELECT CASE 
+		WHEN @DimEventId IN (0, -1) 
+		THEN ((CAST(@PlanEventCnt AS DECIMAL(18,6))) / CAST(@FullSeasonEventCnt AS DECIMAL(18,6))) * CAST(@QtySeat AS DECIMAL(18,6))
+		ELSE (1.0 / CAST(@FullSeasonEventCnt AS DECIMAL(18,6))) * CAST(@QtySeat AS DECIMAL(18,6))
+	END QtyFSE
+
+GO

@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROC [rpt].[Cust_Email_8]
+AS 
+--SELECT * FROM [rpt].[PreCache_Cust_Email_8_tbl] WHERE isReady = 1
+SELECT 'TEST' AS Test
+GO

@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE VIEW [etl].[vw_sync_DimPOSAccount] AS (
+
+	SELECT * FROM dbo.DimPOSAccount (NOLOCK)
+
+)
+
+
+
+GO

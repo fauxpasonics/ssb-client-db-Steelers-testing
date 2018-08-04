@@ -1,0 +1,32 @@
+CREATE TABLE [ods].[Epsilon_ADU]
+(
+[ETL_ID] [int] NOT NULL IDENTITY(1, 1),
+[ETL_CreatedDate] [datetime] NOT NULL CONSTRAINT [DF__Epsilon_A__ETL_C__477C86E9] DEFAULT (getdate()),
+[ETL_UpdatedDate] [datetime] NOT NULL CONSTRAINT [DF__Epsilon_A__ETL_U__4870AB22] DEFAULT (getdate()),
+[ETL_IsDeleted] [bit] NOT NULL CONSTRAINT [DF__Epsilon_A__ETL_I__4964CF5B] DEFAULT ((0)),
+[ETL_DeletedDate] [datetime] NULL,
+[ETL_DeltaHashKey] [binary] (32) NULL,
+[MAILING_NAME] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PROFILE_KEY] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EMAIL_ADDR] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CONTENT] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SOURCE_CODE] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ACTION_CODE] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SUB_ACTION_CODE] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ACTION_DTTM] [datetime] NULL,
+[UNIQUE_FLAG] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LINK_NAME] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LINK_TAG] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ABUSE_DOMAIN] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ABUSEOPT_FLG] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ABUSE_SUB] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+)
+GO
+CREATE NONCLUSTERED INDEX [IX_Epsilon_ADU_ACTION_CODE] ON [ods].[Epsilon_ADU] ([ACTION_CODE])
+GO
+CREATE NONCLUSTERED INDEX [IX_Epsilon_ADU_PROFILE_KEY] ON [ods].[Epsilon_ADU] ([PROFILE_KEY])
+GO
+CREATE NONCLUSTERED INDEX [IX_Epsilon_ADU_SOURCE_CODE] ON [ods].[Epsilon_ADU] ([SOURCE_CODE])
+GO
+CREATE NONCLUSTERED INDEX [IX_Epsilon_ADU_SUB_ACTION_CODE] ON [ods].[Epsilon_ADU] ([SUB_ACTION_CODE])
+GO

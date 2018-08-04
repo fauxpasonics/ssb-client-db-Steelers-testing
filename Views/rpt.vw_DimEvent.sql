@@ -1,0 +1,8 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE VIEW [rpt].[vw_DimEvent] AS (SELECT * FROM dbo.DimEvent (NOLOCK) where IsDeleted = 0)
+
+GO

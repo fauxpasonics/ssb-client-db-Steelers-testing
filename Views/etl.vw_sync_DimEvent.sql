@@ -1,0 +1,45 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE VIEW [etl].[vw_sync_DimEvent] as (
+	SELECT [DimEventId]
+     ,[DimArenaId]
+     ,[DimSeasonId]
+     ,[DimEventHeaderId]
+     ,[EventCode]
+     ,[EventName]
+     ,[EventDesc]
+     ,[EventClass]
+     ,[EventDateTime]
+     ,[EventDate]
+     ,[EventTime]
+     ,[EventStatus]
+     ,[Capacity]
+     ,[Attendance]
+     ,[ScanEventId]
+     ,[ManifestId]
+     ,[SSCreatedBy]
+     ,[SSUpdatedBy]
+     ,[SSCreatedDate]
+     ,[SSUpdatedDate]
+     ,[SSID]
+     ,[SSID_event_id]
+     ,[SourceSystem]
+     ,[DeltaHashKey]
+     ,[CreatedBy]
+     ,[UpdatedBy]
+     ,[CreatedDate]
+     ,[UpdatedDate]
+     ,[IsDeleted]
+     ,[DeleteDate]
+     ,[IsClosed]
+     ,[IsInventoryEligible]
+     ,[MajorCategoryTM]
+     ,[MinorCategoryTM]
+     ,[Config_IsRealTimeAttendanceEnabled]
+     ,[EventOpenTime]
+     ,[EventFinishTime]
+     FROM dbo.DimEvent (NOLOCK)
+)
+GO
